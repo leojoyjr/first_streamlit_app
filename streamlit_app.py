@@ -5,4 +5,4 @@ streamlit.text('🥣Omlete')
 streamlit.text('🐔Hard boiled eggs')
 streamlit.text('🥗Spinach Curry')
 streamlit.text('🥑🍞avocado')
-
+streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
