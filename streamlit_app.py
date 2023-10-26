@@ -13,6 +13,7 @@ my_fruit_list=pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/
 my_fruit_list=my_fruit_list.set_index('Fruit')
 # Let's put a pick list here so they can pick the fruit they want to include 
 fruit_selected=streamlit.multiselect("Pick some fruits :",list(my_fruit_list.index),['Avocado','Strawberries'])
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 #taking a variable to push the fruits selected
 fruit_to_show=my_fruit_list.loc[fruit_selected]
 # Display the table on the page.
@@ -24,7 +25,7 @@ streamlit.header("Fruityvice Fruit Advice!")
 #taking the input from the user
 fruit_choice = streamlit.text_input('What fruit would you like information about?','jackFruit')
 streamlit.write('The user entered ', fruit_choice)
-
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 
